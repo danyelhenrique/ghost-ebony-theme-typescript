@@ -1,0 +1,36 @@
+
+
+[data-pagination-type] {
+
+    .nav-links {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links .page-numbers {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background: none;
+        border: 1px solid #ddd;
+        color: #000;
+        margin: 0 4px;
+        font-size: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-self: center;
+    }
+
+
+    .nav-links .page-numbers:hover, 
+    .nav-links .page-numbers.current {
+        background: #000;
+        border-color: #000;
+        color: var(--light-color);
+    }
+    
+    
+}
+  

@@ -1,0 +1,33 @@
+// color
+
+// Definição das cores principais
+$primary: #ed2324;
+$secondary: #29241f;
+$danger: #de4444;
+
+$white: #fff;
+
+$gray-100: #efecea;
+$gray-200: #c4c4c4;
+$gray-300: #f1f1f1;
+$gray-400: #686868;
+$gray-500: #919191;
+$gray-600: #f9f9f9;
+$gray-700: #dff0d8;
+$gray-800: #f2f0ef;
+$gray-900: #191919;
+
+// neutral Zwilling
+$negative-darkest: #1f1f1f;
+$negative-dark: #2d2d2d;
+$negative-lightest: #6b82ff;
+
+// Global Border Color
+$border-color: rgba($gray-400, 0.2);
+$input-border-color: #fff;
+$form-feedback-icon-invalid: none;
+$form-feedback-icon-valid-color: $gray-400;
+$form-feedback-valid-color: #fff;
+// Text Dark
+$dark: $gray-400;
+$light: $gray-200;

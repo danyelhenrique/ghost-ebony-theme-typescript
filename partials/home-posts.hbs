@@ -1,0 +1,36 @@
+
+<div class="row posts-container">
+    {{#foreach posts }}
+        <div class="col-sm-6 col-md-4  has-post-thumbnail post-89 post type-post status-publish format-standard hentry category-lifestyle tag-image tag-lifestyle  col-xl-3 post-item">
+            <div class="inner-post">
+                <div class="post-format">
+                    <a class="post-featured-image" href="{{url}}"
+                        style="background-image: url('{{feature_image}}');"></a>
+                </div>
+
+                <div class="post-info">
+                    <h3 class="post-title"><a href="{{url}}">{{title}}</a></h3>
+                    <div class="post-meta d-flex ">
+                        <div class="tag_container">
+                            <a href="{{primary_tag.url}}"rel="category tag" class="tag">{{primary_tag.name}}</a>
+                        </div>
+
+                       <div class="date_container">
+                            <time class="post__date date" datetime="{{date format='DD-MM-YYYY'}}">
+                                {{date format="DD MMM, YYYY"}}.
+                            </time>
+                        </div>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>{{excerpt}}</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    {{/foreach}}
+</div>
+
+
+<div class="row">
+   {{pagination }}
+</div>

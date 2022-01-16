@@ -1,0 +1,83 @@
+<header id="zobo-header" class="header">
+  <div class="container">
+    <div class="header-content d-flex d-md-table">
+      <div class="zobo-logo d-table-cell">
+        {{#if @site.logo}}
+        <h1>
+          <a href="{{{@site.url}}}">
+            <img src="{{@site.logo}}" alt="{{@site.logo}}" />
+          </a>
+        </h1>
+        {{/if}}
+      </div>
+
+      <div class="zobo-mainmenu d-table-cell">
+        <div id="nav-wrapper" class="nav-main d-flex d-md-block align-items-center justify-content-end">
+          <ul id="menu-main-menu" class="main-menu d-none d-md-block">
+            <li class="menu-item"><a title="Front-end" href="#/">Front End</a></li>
+            <li class="menu-item"><a title="Back-end" href="#/">Back-end</a></li>
+            <li class="menu-item"><a title="Mobile" href="#/">Mobile</a></li>
+            <li class="menu-item"><a title="DevSecOps" href="#/">DevSecOps</a></li>
+            <li i class="menu-item"><a title="Historia" href="#/">Historia</a></li>
+            <li i class="menu-item"><a title="Indicações" href="#/">Indicações</a></li>
+            <li class="menu-item"><a title="Sobre" href="#/">Sobre</a></li>
+          </ul>
+          {{! }}
+          <ul class="mobile-menu d-block d-md-none m-0">
+            <button class="btn btn-primary bg-transparent border-0 burguer-menu-btn" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#header-mobile-menu" aria-controls="header-mobile-menu">
+              <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-start offcanvas-menu-mobile d-flex flex-column align-items-start p-4 w-100" tabindex="-1"
+              id="header-mobile-menu" aria-labelledby="offcanvasMobileMenu">
+
+              <div class="d-flex align-items-center justify-content-between w-100">
+                <button class="btn  back-menu-mobile">
+                  <span class="dynamic-icon" style="--icon-url: url({{asset "images/vector-arrow.svg"}});"></span>
+                </button>
+                <span class="mobile-menu-title text-center d-block w-100">MENU</span>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="d-block w-100"><hr class="separetor"></div>
+
+              <div class="menu-item w-100 text-start" >
+                <a title="Front-end" href="#/" class="navigation-entry-title menu-entry" data-menu-to="front-end" data-level-to="first">
+                  Front End
+                </a>
+                <div class="sub-menu-first-level d-flex align-items-center sub-menu d-none" data-menu="front-end">
+                      <div class="dropdown w-100">
+                        <button class="btn dropdown-toggle d-flex align-items-center justify-content-between w-100" type="button" id="javascript" data-bs-toggle="dropdown" aria-expanded="false">
+                          Javascript
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="javascript">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+                </div>
+              </div>
+              <div class="menu-item menu-entry"><a title="Back-end" href="#/" class="navigation-entry-title">Back-end</a></div>
+              <div class="menu-item menu-entry"><a title="Mobile" href="#/" class="navigation-entry-title">Mobile</a></div>
+              <div class="menu-item menu-entry"><a title="DevSecOps" href="#/" class="navigation-entry-title">DevSecOps</a></div>
+              <div class="menu-item menu-entry"><a title="Historia" href="#/" class="navigation-entry-title">Historia</a></div>
+              <div class="menu-item menu-entry"><a title="Indicações" href="#/" class="navigation-entry-title">Indicações</a></div>
+              <div class="menu-item menu-entry"><a title="Sobre" href="#/" class="navigation-entry-title">Sobre</a></div>
+
+            </div>
+          </ul>
+          {{! }}
+        </div>
+        <a href="javascript:void(0)" class="nav-icon toggle-mainmenu d-none">
+          <i class="fas fa-bars"></i>
+        </a>
+      </div>
+      <div class="header-social zobo-social d-flex align-items-center d-md-table-cell">
+        <a href="#" target="_blank"><i class="fa fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,88 @@
+.newsletter {
+  .title-newsletter {
+    font-size: 16px;
+  }
+
+  form {
+    input {
+      min-height: 50px;
+      font-size: 16px;
+
+      &:focus {
+        outline: 0;
+        box-shadow: none;
+        border: 0;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-align: left;
+        color: $secondary;
+      }
+    }
+
+    .btn-submit {
+      height: 50px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+
+      &:disabled {
+        cursor: not-allowed;
+        pointer-events: all;
+      }
+      &:active,
+      &:focus,
+      &:focus-within {
+        box-shadow: 0;
+      }
+    }
+  }
+
+  .invalid-field {
+    border: 1px solid red;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .newsletter {
+    .title-newsletter {
+      font-size: 20px;
+    }
+
+    form {
+      input {
+        font-size: 12px;
+        &::placeholder {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .newsletter {
+    .title-newsletter {
+      max-width: 194px;
+    }
+    form {
+      .input-container {
+        max-width: 412px;
+        width: 100%;
+      }
+      .btn-submit {
+        width: 50px;
+        margin-left: 9px;
+        margin-top: 28px;
+
+        img {
+          padding: 8px;
+        }
+        &::before {
+          content: "";
+        }
+      }
+    }
+  }
+}

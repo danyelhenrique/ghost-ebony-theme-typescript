@@ -1,0 +1,15 @@
+@mixin title-separator-vb {
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 24px;
+    background-color: $secondary;
+    margin: 25px auto;
+  }
+}
+
+
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}

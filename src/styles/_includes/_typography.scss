@@ -1,0 +1,93 @@
+@use "sass:math";
+
+%ff-secondary {
+  font-weight: 700;
+  // font-family: "Futura HV BT", sans-serif;
+}
+.ff-secondary {
+  @extend %ff-secondary;
+}
+
+// title separator vertical bottom
+.title-separator-vb {
+  @include title-separator-vb();
+}
+
+//------------------------------------------------------------------------------
+// line-height mixin
+@mixin line-height($heightValue) {
+  line-height: $heightValue + px; //fallback for old browsers
+  line-height: (0.0625 * $heightValue) + rem;
+}
+
+@for $i from 6 through ceil(math.div(38, 2)) {
+  .lh-#{($i - 1)*2} {
+    @include line-height(($i - 1) * 2);
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @for $i from 6 through ceil(math.div(38, 2)) {
+    .lh-md-#{($i - 1)*2} {
+      @include line-height(($i - 1) * 2);
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @for $i from 6 through ceil(math.div(38, 2)) {
+    .lh-lg-#{($i - 1)*2} {
+      @include line-height(($i - 1) * 2);
+    }
+  }
+  .border-lg-0 {
+    border: 0 !important;
+  }
+  .overflow-lg-visible {
+    overflow: visible !important;
+  }
+}
+
+// --------------------------------------------------
+// TODO: Remover toda a utilização dessas classes do projeto.
+// O designer extrapalou com todas as regras de padronizações, e title, title-medium, etc, não é padrão para ser usado
+// dentro do projeto, pois o mesmo title em um lugar, não é o mesmo title em outro local do site, quando validamos responsividade.
+// Há muitas divergências no projeto, e por isso as classes abaixo NÃO DEVEM MAIS SER UTILIZADAS. Cada área do layout
+// pode usar a classe de font, de tipagem de font-family, mas não um agrupamento do tipo title. A não ser que ele realmente seja padrão.
+
+@warn "Classe .title e suas semelhantes devem ser removidas do projeto";
+
+.title {
+  font-size: 14px !important;
+  @extend %ff-secondary;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.title-medium {
+  font-size: 13px !important;
+  @extend %ff-secondary;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.title-small {
+  font-size: 12px !important;
+  @extend %ff-secondary;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.text-extra-small {
+  font-size: 9px !important;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.text-small {
+  font-size: 10px !important;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.text-normal {
+  font-size: 12px !important;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.text-big {
+  font-size: 14px !important;
+  --deprecated: "WARNING: Essa classe de CSS deve ser abolida do projeto. Ver comentários em _includes/_variables/_typrografy.scss";
+}
+.text-medium {
+  font-size: 14px;
+}

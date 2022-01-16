@@ -1,0 +1,29 @@
+// =========================================================
+//  PROJECT SCSS VARIABLES
+// =========================================================
+
+//========================================================== Zwilling ==========================================================
+
+// Global Border Radius
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+
+// position values
+$position-values: (
+  0: 0,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+);
+// Container variables
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1092px,
+  xxl: 1100px,
+);
+
+$offcanvas-transition-duration: 0.15s;

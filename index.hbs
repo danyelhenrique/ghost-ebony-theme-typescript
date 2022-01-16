@@ -1,0 +1,73 @@
+{{!< default}}
+
+{{>main-header}}
+
+
+<main class="container" id="content">
+  <section class="row">
+      <div class="glide">
+        <div class="glide__track feature-glider position-relative" data-glide-el="track">
+          <ul class="glide__slides">
+             {{#get "posts" include="tags,authors" limit="3" as |slider_post|}}
+                {{#foreach slider_post}}
+                    <li class="glide__slide">
+                      <div class="d-flex slider-post">
+                        <div class="item-post-feature d-md-table w-100">
+                          <div class="post-image d-md-table-cell">
+                                <div class="bg-img" style="background-image: url('{{feature_image}}');"></div>
+                          </div>
+                        
+                          <div class="post-info d-md-table-cell">
+                              <h3 class="post-title">
+                                  <a href="{{url}}" class="text-decoration-none">{{title}}</a>
+                              </h3>
+                              <div class="post-meta d-flex align-content-center justify-content-center flex-wrap">
+                                  <div class="post-cats d-flex align-content-center justify-content-center tags-container">
+                                      {{>tag max=2}}
+                                  </div>
+                                  <div class="data-share">
+                                      <time class="post-date me-2"   datetime="{{date format='DD-MM-YYYY'}}">
+                                        {{date format="DD MMMM YYYY"}}
+                                      </time>
+                                      <a href="#" class="like-post" title="Like this">
+                                        <i class="fa fa-heart"></i>
+                                          2
+                                      </a>
+                                  </div>
+                              </div>
+                              <div class="post-excerpt">
+                                  <p>
+                                    {{excerpt }}
+                                  </p>
+                              </div>
+                              <a class="readmore az-button text-decoration-none" href="{{url}}">Read on</a>
+                          </div>
+
+                        </div>
+                      </div>
+                    </li>
+                {{/foreach}}
+              {{/get}}
+          </ul>
+
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="row">
+    <div class="col-md-12">
+      <div>{{>home-posts}}</div>
+    </div>
+  </section>
+</main>
+
+
+{{#contentFor "footer-scripts"}}
+  <script defer type="text/javascript" src="{{asset "scripts/home.js"}}"></script>
+{{/contentFor}}
+

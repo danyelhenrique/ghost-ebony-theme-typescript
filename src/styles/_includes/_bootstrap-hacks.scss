@@ -1,0 +1,95 @@
+/**
+Este arquivo é especificamente para sobrescrever elementos do bootstrap que podem estar
+inválidos ou gerar conflito com elementos base do projeto.
+**/
+
+// Reset primary
+// This selector is only for reset the default colors of Bootstrap because the de contrast color for primary variable is wrong
+
+@use "sass:math";
+
+.btn-primary,
+.btn-light {
+  &,
+  &:hover,
+  .btn-check:focus + &,
+  &:focus,
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle,
+  &:disabled,
+  &.disabled {
+    color: $white;
+    border: none;
+  }
+}
+
+.btn-outline-primary {
+  &:hover,
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  &.dropdown-toggle.show {
+    color: $white;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// sobrescrever classe padrão fo Bootstrap para manter padrão "900" já casado com o modelo de fontes do projeto
+.fw-bolder {
+  font-weight: 900 !important;
+}
+
+// -----------------------------------------------------------------------------
+// Classe padrão para utilização do dropshadow
+.shadow-default {
+  filter: drop-shadow(0px 17px 16px rgba(0, 0, 0, 0.08));
+}
+
+// -----------------------------------------------------------------------------
+// Forçar padding-0 .navigation-tabs (gerada pela vtex?)
+.navigation-tabs {
+  padding: 0 !important;
+}
+
+// -----------------------------------------------------------------------------
+// Hack para letter-spacing's
+.ls-1 {
+  letter-spacing: 1px;
+}
+.ls-2 {
+  letter-spacing: 2px;
+}
+
+// -----------------------------------------------------------------------------
+// breakpoint para o tamanho do botão 'adicionar ao carrinho'
+
+@include media-breakpoint-up(md) {
+  .btn-add-cart {
+    width: 79%;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// justify content center quando a tela for no mínimo 2700px
+// @media (min-width: 2700px) {
+//   .justify-content-2700-center {
+//     justify-content: center;
+//   }
+// }
+
+// -----------------------------------------------------------------------------
+// classe extra para uppercase quando maior que 'lg'
+
+@include media-breakpoint-up(lg) {
+  .text-md-uppercase {
+    text-transform: uppercase !important;
+  }
+}
+
+@function rem($size) {
+  @return $size / 16px * 1rem;
+}

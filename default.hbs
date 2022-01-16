@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}</title>
+  {{> head}}
+
+
+  {{{block "head-styles"}}}
+  {{ghost_head}}
+
+  <script defer="" src="https://dhfc.ghost.io/public/cards.min.js?v=4bb87c3822"></script>
+  <link rel="stylesheet" type="text/css" href="https://dhfc.ghost.io/public/cards.min.css?v=4bb87c3822">
+
+</head>
+<body class="{{body_class}} light-theme" id="body">
+  {{>bl-header}}
+
+  {{{body}}}
+
+  {{> footer}}
+
+  {{ghost_foot}}
+
+  {{>include-footer}}
+
+  {{{block "footer-scripts"}}}
+
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+.main-footer {
+    background: var(--dark-color);
+	color: var(--tertiary-color);
+	font-size: 14px;
+}
+
+#footer {
+	padding-top: 45px;
+}
+
+
+
+.ft-widget{
+	padding: 70px 0;
+	border-bottom: 1px solid #232323;
+}
+.ft-widget .widget-title{color: var(--light-color)}
+.ft-widget .widget ul li{padding: 6px 0;}
+.ft-widget .widget a{color: inherit;}
+.ft-widget .widget a:hover{color: var(--primary-color);}
+.ft-widget .mc4wp-form-fields label{padding-right: 40px}
+.ft-widget .tagcloud a{border-color: var(--seconday-color);}
+.ft-widget .tagcloud a:hover{border-color: var(--primary-color);}
+.ft-widget .form-newsletter{
+	background: #222;
+	border-color: #222;
+}
+.copyright{
+	padding: 28px 0;
+	text-align: center;
+}
+.copyright a{color: var(--light-color);}
+.ft-widget .widget{
+	margin-bottom: 30px;
+}
+.ft-widget .widget:last-child{
+	margin-bottom: 0;
+}
+
+.widget ul li{
+	list-style: none;
+}
+.widget ul li a{
+	color: #000;
+}
+.widget ul li a:hover{color:var(--primary-color) }
+
+
+
+
+
+/* Tag Clound */
+.tagcloud a {
+	display: inline-block;
+	font-size: 14px !important;
+	padding: 5px 15px;
+	border: 1px solid #ddd;
+	color: inherit;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-radius: 50px;
+}
+.tagcloud a:hover{
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+
+
+/* newsletter */
+.newsletter-wrap label{margin-bottom: 25px}
+.form-newsletter{
+	border: 1px solid #ddd;
+	display: table;
+	white-space: nowrap;
+	width: 100%;
+	background: var(--light-color);
+}
+.form-newsletter input[type="email"]{
+	border: none;
+	width: 100%;
+	background: transparent;
+}
+.form-newsletter span{
+	width: 1%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.form-newsletter span button{
+	background: url('../images/arrow-right.png') no-repeat left center;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	font-size: 0;
+	color: transparent;
+	border: none;
+}
+
+
+
+.widget-title{
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+.widget-title:after{
+	content: "";
+	width: 6px;
+	height: 6px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	background: var(--primary-color);
+	display: inline-block;
+	margin-left: 5px;
+}
+/* Monster widget */
+.widget ul{padding: 0;}
+.widget ul ul {
+	padding-left: 20px;
+	padding-top: 10px;
+	border-top: 1px dashed #ddd;
+	margin-top: 12px;
+}
+
+li:has( a:not([href]):not([tabindex]) ) {
+    display: none;
+}
+
+.widget ul li{
+	list-style: none;
+}
+.widget ul li a{
+	color: #000;
+}
+

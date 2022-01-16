@@ -1,0 +1,58 @@
+{{!< default}} 
+
+{{#contentFor "head-styles" }}
+  <link rel="preconnect" href="{{asset "styles/post.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "styles/post.css"}}" />
+{{/contentFor}}
+
+{{>content-header}}
+
+
+<main class="container content" id="content">
+  <article class="post {{post_class}}">
+    {{#post}}
+    <header class="post__header">
+      <div class="post__meta">
+        <div class="author-meta">
+            {{#primary_author}}
+              <div class="author d-flex  align-items-center justify-content-center flex-column">
+                <img class="author-profile-image" src="{{img_url profile_image}}" alt="{{name}}" />
+                <a href="{{url}}" class="post-author text-decoration-none mt-3">{{name}}</a>
+              </div>
+            {{/primary_author}}
+        </div>
+
+        <h1 class="post__title d-flex align-items-center justify-content-center my-3 text-center">{{title}}</h1>
+
+       <div class="d-flex align-items-center justify-content-center">
+          {{#if tags}}
+            <div class="tag_container">
+              {{#foreach tags}}
+                <a href="{{url}}" title="{{name}}" class="post__tags tag tag-{{id}} {{slug}}">{{name}}</a>
+              {{/foreach}}
+            </div>
+          {{/if}}
+          <div class="date_container">
+            <time class="post__date date" datetime="{{date format='DD-MM-YYYY'}}">
+              {{date format="DD MMMM, YYYY"}}.
+            </time>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <section class="post__content">
+      {{content}}
+    </section>
+
+    {{/post}}
+
+  </article>
+</main>
+
+
+{{#contentFor "footer-scripts"}}
+  <script defer src="{{asset "/scripts/post.js"}}"></script>
+{{/contentFor}}
+

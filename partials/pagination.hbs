@@ -1,0 +1,82 @@
+
+
+<div class="pagination d-flex align-items-center justify-center" role="navigation" data-pagination-type="fetch">
+    <nav class="navigation pagination w-100" role="navigation" aria-label="Posts">
+        <div class="nav-links d-flex align-items-center justify-content-center">
+            {{#if prev}}
+                <button class="prev btn page-numbers" data-link="{{page_url prev}}"><span class="fa fa-angle-left w-100 d-block"></span></button>
+            {{/if}}
+            <div class="d-flex page-nums"></div>
+            {{#if next}}
+            <button class="next btn page-numbers" data-link="{{page_url next}}"><span class="fa fa-angle-right d-block w-100"></span></button>
+            {{/if}}
+        </div>
+    </nav>    
+</div>
+
+<script>
+    (function(){
+        const pageTotal = parseInt("{{pages}}");
+        const pageCurrent = parseInt("{{page}}");
+        const limitPage = parseInt("{{@config.posts_per_page}}");
+        let page = 1;
+        const pageNums = document.querySelector('.pagination .page-nums');
+
+
+        if(pageCurrent >= limitPage) {
+            page = pageCurrent - 1;
+            pageNums.innerHTML += `<button class="btn first page-numbers" data-link="{{page_url}}page/${1}><span class="d-block w-100">1</span></button> `
+        }
+
+        for(i = 0; i < limitPage; i++) {
+
+            if(page === pageCurrent) {
+                pageNums.innerHTML += '<button class="btn page-numbers current" aria-current="page" data-link="{{page_url}}page/{{page}}"> <span class="d-block w-100">{{page}}</span> </button>';
+            }
+            else if(page <= pageTotal){
+                pageNums.innerHTML += `<button class="btn page-numbers" data-link="{{page_url}}page/${page}"><span class="d-block w-100"> ${page}</span></button>`
+            }
+            page++;
+        }
+
+         document.querySelectorAll('[data-pagination-type="fetch"] [data-link]').forEach((element) => {
+             element.addEventListener('click', (event) =>  {
+                    const dataLink = event.currentTarget.getAttribute('data-link');
+                    // TODO colocar validacao para quando a url for a mesma que o data-link nao fazer nada
+                                        
+                    window.location.href = dataLink;
+             })
+         })
+
+    /*
+        const fetchPage = async (dataLink) => {
+            const response = await fetch(dataLink);
+            const data = await response.text();
+            return data;
+        }
+
+        const postsContainer =  document.querySelector('.posts-container');
+
+       
+       
+        document.querySelectorAll('[data-pagination-type] [data-link]').forEach((e) => {
+             e.addEventListener('click', async (event) => {
+                 const dataLink = event.currentTarget.getAttribute('data-link');
+                 const response = await fetchPage(dataLink);
+                var htmlObject = document.createElement('div');
+                htmlObject.innerHTML = response;
+                const html =  htmlObject.querySelectorAll('.post-item');
+                htmlObject.innerHTML = html;
+                html.forEach((item) => {
+                postsContainer.append(item);
+                })
+            })
+        }); */
+
+
+    })()
+
+
+
+</script>
+

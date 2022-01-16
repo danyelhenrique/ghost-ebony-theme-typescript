@@ -1,0 +1,13 @@
+{{#if tags}}
+   <span data-max="{{max}}" class="d-none max-tags"> </span>
+    {{#foreach tags limit="2"}}
+            {{#if @first }}
+                <a href="{{url}}" rel="category tag" id={{id}} slug={{slug}} title="{{name}}" class="text-decoration-none tag">{{name}} </a> ,
+
+            {{else if @last}}
+                    <a href="{{url}}" rel="category tag" id={{id}} slug={{slug}} title="{{name}}" class="text-decoration-none ps-1 tag me-2">{{name}}</a>
+            {{else}}
+                <a href="{{url}}" rel="category tag" id={{id}} slug={{slug}} title="{{name}}" class="text-decoration-none ps-1 tag">{{name}} </a>  ,
+            {{/if}}
+    {{/foreach}}
+{{/if}}

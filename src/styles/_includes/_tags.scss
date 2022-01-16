@@ -1,0 +1,25 @@
+
+
+.tag_container {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.tag {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 5px;
+
+    &::after {
+        content: "";
+        height: 1px;
+        display: block;
+        width: 100%;
+        background: var(--primary-color);
+    }
+}
